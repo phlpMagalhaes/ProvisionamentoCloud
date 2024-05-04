@@ -1,0 +1,11 @@
+PLAY [Instalação e configuração do IIS] *********************************************************************
+
+TASK [Instalação do IIS] ************************************************************************************
+changed: [remote_VM]
+
+TASK [Habilitar o serviço World Wide Web Publishing] ********************************************************
+changed: [remote_VM]
+
+PLAY RECAP ***************************************************************************************************
+remote_VM                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+

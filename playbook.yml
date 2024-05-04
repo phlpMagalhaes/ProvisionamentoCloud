@@ -1,9 +1,17 @@
-# playbook.yml
+# playbook_iis.yml
 
-- hosts: all
-  become: true
+---
+- name: Instalação e configuração do IIS
+  hosts: windows_servers
+  gather_facts: no
   tasks:
-    - name: Install IIS
+    - name: Instalação do IIS
       win_feature:
         name: Web-Server
         state: present
+
+    - name: Habilitar o serviço World Wide Web Publishing
+      win_service:
+        name: W3SVC
+        start_mode: auto
+        state: started
